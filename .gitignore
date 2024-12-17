@@ -32,3 +32,4 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 db/migrate/20241217211921_unmotivational_posters.rb
+db/migrate/20241217224125_create_posters.rb
