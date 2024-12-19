@@ -1,22 +1,25 @@
 class Api::V1::PostersController < ApplicationController
   def index
-   posters = Poster.all
-   render json: PosterSerializer.format_posters(posters)
+    posters = Poster.all
+    option = { meta: { count: posters.count } }
+    render json: PosterSerializer.format_posters(posters, option)
   end
+  
 
   def show
     poster = Poster.find(params[:id])
-    render json: PosterSerializer.format_single_poster(poster)
+    option = {}
+    render json: PosterSerializer.format_single_poster(poster, option)
   end
 
   def create
     poster = Poster.create(poster_params)
-    render json: PosterSerializer.format_single_poster(poster) 
+    render json: PosterSerializer.format_single_poster(poster, {}) 
   end
 
   def update
     poster = Poster.update(params[:id], poster_params)
-    render json: PosterSerializer.format_single_poster(poster)
+    render json: PosterSerializer.format_single_poster(poster, {})
   end
 
   def destroy
