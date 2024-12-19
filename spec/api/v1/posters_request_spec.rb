@@ -150,4 +150,25 @@ describe "Posters API", type: :request do
     expect(attributes).to have_key(:img_url)
     expect(attributes[:img_url]).to be_a(String)
   end
+
+  it "can update a poster" do
+    id = Poster.create(
+      name: "FUTILITY",
+      description: "Hard work rarely pays off.",
+      price: 150.00,
+      year: 2016,
+      vintage: false,
+      img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
+    ).id
+    previous_name = Poster.last.name
+    poster_params = { name: "REGRET"}
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    patch "/api/v1/posters/#{id}", headers: headers, params: JSON.generate({poster: poster_params})
+    poster = Poster.find_by(id: id)
+
+    expect(response).to be_successful
+    expect(poster.name).to_not eq(previous_name)
+    expect(poster.name).to eq("REGRET")
+  end
 end
