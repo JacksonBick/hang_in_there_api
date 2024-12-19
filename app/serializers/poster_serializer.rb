@@ -1,5 +1,5 @@
 class PosterSerializer
-  def self.format_posters(posters)
+  def self.format_posters(posters, option)
     {
       data: posters.map do |poster|
       {
@@ -14,13 +14,14 @@ class PosterSerializer
           img_url: poster.img_url
         }
       }
-    end
+    end,
+    meta: option[:meta]
   }
   end
 
-  def self.format_single_poster(poster)
+  def self.format_single_poster(poster, option)
     {
-      data: format_single_poster_data(poster)
+      data: format_single_poster_data(poster, option)
     }
   end
 
@@ -32,7 +33,7 @@ class PosterSerializer
 
   private
   
-  def self.format_single_poster_data(poster)
+  def self.format_single_poster_data(poster, option)
     {
       id: poster.id,
       type: poster.class.to_s,
