@@ -27,5 +27,5 @@ end
 private
 
 def poster_params
-  params.require(:poster).permit(:name, :description, :price, :year, :vintage, :image_url)
+  params.require(:poster).permit(:name, :description, :price, :year, :vintage, :img_url)
 end
