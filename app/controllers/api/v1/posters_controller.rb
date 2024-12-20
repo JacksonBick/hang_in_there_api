@@ -29,13 +29,28 @@ class Api::V1::PostersController < ApplicationController
   private
 
   def sorted_posters
-    if params[:sort] == 'desc'
-      sort_order = 'desc'
-    else
-      sort_order = 'asc'
+
+    posters = Poster.all
+
+    if params[:name].present?
+      posters = posters.where("name LIKE ?", "%" + params[:name] + "%")
     end
 
-    Poster.order(created_at: sort_order)
+    if params[:min_price].present?
+      posters = posters.where('price >= ?', params[:min_price])
+    end
+
+    if params[:max_price].present?
+      posters = posters.where('price <= ?', params[:max_price])
+    end
+
+    if params[:sort] == 'desc'
+      posters = posters.order(created_at: :desc)
+    else
+      posters = posters.order(created_at: :asc)
+    end
+
+    posters
   end
 end
 
