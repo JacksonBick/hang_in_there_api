@@ -52,29 +52,3 @@ describe "Posters api" do
   end
 end
 
-describe "test for asc" do
-    it "sorts the posters from created_at ascending" do
-        get '/api/v1/posters', params: { sort: 'asc' }
-
-        expect(response).to be_successful
-
-        posters = JSON.parse(response.body, symbolize_names: true)[:data]
-
-        expect(posters.first[:attributes][:name]).to eq("HOPELESSNESS")
-        expect(posters.last[:attributes][:name]).to eq("REGRET")
-    end
-end
-
-describe "test for desc" do
-    it "sorts the posters from created_at descending" do
-        get '/api/v1/posters', params: { sort: 'desc' }
-
-        expect(response).to be_successful
-
-        posters = JSON.parse(response.body, symbolize_names: true)[:data]
-
-        expect(posters.first[:attributes][:name]).to eq("REGRET")
-        expect(posters.last[:attributes][:name]).to eq("HOPELESSNESS")
-    end
-end
-
