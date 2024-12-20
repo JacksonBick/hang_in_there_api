@@ -69,7 +69,7 @@ describe "test for desc" do
     it "sorts the posters from created_at descending" do
         get '/api/v1/posters', params: { sort: 'desc' }
 
-        xpect(response).to be_successful
+        expect(response).to be_successful
 
         posters = JSON.parse(response.body, symbolize_names: true)[:data]
 
