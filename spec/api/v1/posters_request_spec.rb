@@ -260,4 +260,60 @@ describe "Posters API", type: :request do
       expect(posters.last[:attributes][:name]).to eq("REGRET")
       
   end
+
+  it "filters posters by specific name endpoint" do
+    Poster.create(name: "REGRET",
+      description: "Hard work rarely pays off.",
+      price: 89.00,
+      year: 2018,
+      vintage: true,
+      img_url:  "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+      created_at: 1)
+
+      Poster.create(name: "FUTILITY",
+      description: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+      price: 150.00,
+      year: 2016,
+      vintage: false,
+      img_url:  "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+      created_at: 2)
+
+      get '/api/v1/posters', params: { name: "FUTILITY" }
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to have_http_status(:success)
+      expect(json[:data].first[:attributes][:name]).to eq("FUTILITY")
+  end
+
+  it "filters posters by min_price" do
+    Poster.create(name: "REGRET",
+    description: "Hard work rarely pays off.",
+    price: 89.00,
+    year: 2018,
+    vintage: true,
+    img_url:  "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d")
+
+    Poster.create(name: "FUTILITY",
+    description: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+    price: 150.00,
+    year: 2016,
+    vintage: false,
+    img_url:  "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d")
+
+    Poster.create(name: "HOPELESSNESS",
+    description: "Stay in your comfort zone; it's safer.",
+    price: 112.00,
+    year: 2020,
+    vintage: true,
+    img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d")
+
+    get '/api/v1/posters', params: { min_price: 100 }
+
+    expect(response).to have_http_status(:success)
+
+    json = JSON.parse(response.body, symbolize_names: true)
+
+    expect(json[:data].length).to eq(2)
+    expect(json[:data].first[:attributes][:name]).to eq("FUTILITY")
+  end
 end
