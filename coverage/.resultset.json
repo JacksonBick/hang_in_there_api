@@ -1,15 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    },
-    "timestamp": 1734561681
-=======
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/environment.rb": {
-=======
-      "/Users/montyp/mod2/hang_in_there_api/config/environment.rb": {
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
         "lines": [
           null,
           1,
@@ -18,11 +10,7 @@
           1
         ]
       },
-<<<<<<< HEAD
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/application.rb": {
-=======
-      "/Users/montyp/mod2/hang_in_there_api/config/application.rb": {
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
         "lines": [
           1,
           null,
@@ -70,11 +58,7 @@
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/boot.rb": {
-=======
-      "/Users/montyp/mod2/hang_in_there_api/config/boot.rb": {
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
         "lines": [
           1,
           null,
@@ -82,11 +66,7 @@
           1
         ]
       },
-<<<<<<< HEAD
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/environments/test.rb": {
-=======
-      "/Users/montyp/mod2/hang_in_there_api/config/environments/test.rb": {
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
         "lines": [
           1,
           null,
@@ -154,11 +134,7 @@
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/initializers/cors.rb": {
-=======
-      "/Users/montyp/mod2/hang_in_there_api/config/initializers/cors.rb": {
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
         "lines": [
           null,
           null,
@@ -178,11 +154,7 @@
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/initializers/filter_parameter_logging.rb": {
-=======
-      "/Users/montyp/mod2/hang_in_there_api/config/initializers/filter_parameter_logging.rb": {
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
         "lines": [
           null,
           null,
@@ -194,11 +166,7 @@
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/initializers/inflections.rb": {
-=======
-      "/Users/montyp/mod2/hang_in_there_api/config/initializers/inflections.rb": {
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
         "lines": [
           null,
           null,
@@ -218,11 +186,7 @@
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/routes.rb": {
-=======
-      "/Users/montyp/mod2/hang_in_there_api/config/routes.rb": {
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
         "lines": [
           1,
           null,
@@ -246,29 +210,20 @@
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/app/models/poster.rb": {
-=======
-      "/Users/montyp/mod2/hang_in_there_api/app/models/poster.rb": {
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
         "lines": [
           1,
           null,
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/app/models/application_record.rb": {
-=======
-      "/Users/montyp/mod2/hang_in_there_api/app/models/application_record.rb": {
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
         "lines": [
           1,
           1,
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/app/controllers/api/v1/posters_controller.rb": {
         "lines": [
           1,
@@ -276,15 +231,6 @@
           3,
           3,
           3,
-=======
-      "/Users/montyp/mod2/hang_in_there_api/app/controllers/api/v1/posters_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
           null,
           null,
           null,
@@ -306,6 +252,18 @@
           null,
           1,
           1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          3,
+          1,
+          null,
+          2,
+          null,
+          null,
+          3,
           null,
           null,
           null,
@@ -316,34 +274,20 @@
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/app/controllers/application_controller.rb": {
-=======
-      "/Users/montyp/mod2/hang_in_there_api/app/controllers/application_controller.rb": {
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
         "lines": [
           1,
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/app/serializers/poster_serializer.rb": {
-=======
-      "/Users/montyp/mod2/hang_in_there_api/app/serializers/poster_serializer.rb": {
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
         "lines": [
           1,
           1,
           null,
-<<<<<<< HEAD
           3,
           null,
           9,
-=======
-          1,
-          null,
-          3,
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
           null,
           null,
           null,
@@ -385,11 +329,6 @@
         ]
       }
     },
-<<<<<<< HEAD
-    "timestamp": 1734727439
->>>>>>> Stashed changes
-=======
-    "timestamp": 1734727188
->>>>>>> dba94ee607211024bed84422c43e0c9405307a9c
+    "timestamp": 1734728124
   }
 }
