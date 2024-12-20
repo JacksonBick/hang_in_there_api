@@ -25,12 +25,6 @@ class PosterSerializer
     }
   end
 
-  def self.create_poster(poster)
-    {
-      name: poster.name
-    }
-  end
-
   private
   
   def self.format_single_poster_data(poster, option)
