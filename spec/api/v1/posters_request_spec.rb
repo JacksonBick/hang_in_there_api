@@ -189,4 +189,75 @@ describe "Posters API", type: :request do
     expect(Poster.count).to eq(0)
     expect{ Poster.find(poster.id) }.to raise_error(ActiveRecord::RecordNotFound)
   end
+
+  it "sorts the posters from created_at ascending" do
+      Poster.create(name: "REGRET",
+      description: "Hard work rarely pays off.",
+      price: 89.00,
+      year: 2018,
+      vintage: true,
+      img_url:  "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+      created_at: 1)
+
+      Poster.create(name: "FUTILITY",
+      description: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+      price: 150.00,
+      year: 2016,
+      vintage: false,
+      img_url:  "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+      created_at: 2)
+
+      Poster.create(name: "HOPELESSNESS",
+      description: "Stay in your comfort zone; it's safer.",
+      price: 112.00,
+      year: 2020,
+      vintage: true,
+      img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+      created_at: 3)
+
+      get '/api/v1/posters', params: { sort: 'asc' }
+
+      expect(response).to be_successful
+
+      posters = JSON.parse(response.body, symbolize_names: true)[:data]
+
+      expect(posters.first[:attributes][:name]).to eq("REGRET")
+      expect(posters.last[:attributes][:name]).to eq("HOPELESSNESS")
+  end
+  
+  it "sorts the posters from created_at descending" do
+    Poster.create(name: "REGRET",
+      description: "Hard work rarely pays off.",
+      price: 89.00,
+      year: 2018,
+      vintage: true,
+      img_url:  "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+      created_at: 1)
+
+      Poster.create(name: "FUTILITY",
+      description: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+      price: 150.00,
+      year: 2016,
+      vintage: false,
+      img_url:  "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+      created_at: 2)
+
+      Poster.create(name: "HOPELESSNESS",
+      description: "Stay in your comfort zone; it's safer.",
+      price: 112.00,
+      year: 2020,
+      vintage: true,
+      img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+      created_at: 3)
+      
+      get '/api/v1/posters', params: { sort: 'desc' }
+
+      expect(response).to be_successful
+
+      posters = JSON.parse(response.body, symbolize_names: true)[:data]
+
+      expect(posters.first[:attributes][:name]).to eq("HOPELESSNESS")
+      expect(posters.last[:attributes][:name]).to eq("REGRET")
+      
+  end
 end
