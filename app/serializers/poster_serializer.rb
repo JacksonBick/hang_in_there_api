@@ -4,7 +4,7 @@ class PosterSerializer
       data: posters.map do |poster|
       {
         id: poster.id,
-        type: poster.class,
+        type: poster.class.name,
         attributes: {
           name: poster.name,
           description: poster.description,
@@ -30,7 +30,7 @@ class PosterSerializer
   def self.format_single_poster_data(poster, option)
     {
       id: poster.id,
-      type: poster.class.to_s,
+      type: poster.class.name,
       attributes: {
         name: poster.name,
         description: poster.description,
