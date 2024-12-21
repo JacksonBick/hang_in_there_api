@@ -49,7 +49,7 @@ class Api::V1::PostersController < ApplicationController
     posters = Poster.all
 
     if params[:name].present?
-      posters = posters.where("name LIKE ?", "%" + params[:name] + "%")
+      posters = posters.where("name ILIKE ?", "%" + params[:name] + "%")
     end
 
     if params[:min_price].present?
