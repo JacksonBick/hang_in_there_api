@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/environment.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/application.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/config/application.rb": {
         "lines": [
           1,
           null,
@@ -58,7 +58,7 @@
           null
         ]
       },
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/boot.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -66,7 +66,7 @@
           1
         ]
       },
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/environments/test.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -134,7 +134,7 @@
           null
         ]
       },
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/initializers/cors.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/config/initializers/cors.rb": {
         "lines": [
           null,
           null,
@@ -154,7 +154,7 @@
           null
         ]
       },
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/initializers/filter_parameter_logging.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -166,7 +166,7 @@
           null
         ]
       },
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/initializers/inflections.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -186,7 +186,7 @@
           null
         ]
       },
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/config/routes.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/config/routes.rb": {
         "lines": [
           1,
           null,
@@ -210,97 +210,116 @@
           null
         ]
       },
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/app/models/poster.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/app/models/poster.rb": {
         "lines": [
           1,
-          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null
         ]
       },
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/app/models/application_record.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/app/controllers/api/v1/posters_controller.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/app/controllers/api/v1/posters_controller.rb": {
         "lines": [
           1,
           1,
-          5,
-          5,
-          5,
-          null,
-          null,
           null,
           1,
-          1,
-          1,
-          1,
+          6,
+          6,
+          6,
           null,
           null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          5,
-          null,
-          5,
-          1,
-          null,
-          null,
-          5,
-          1,
-          null,
-          null,
-          5,
-          0,
-          null,
-          null,
-          5,
-          1,
-          null,
-          4,
-          null,
-          null,
-          5,
-          null,
-          null,
-          null,
-          1,
           null,
           1,
           2,
+          null,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          2,
+          null,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          6,
+          null,
+          6,
+          1,
+          null,
+          null,
+          6,
+          1,
+          null,
+          null,
+          6,
+          1,
+          null,
+          null,
+          6,
+          1,
+          null,
+          5,
+          null,
+          null,
+          6,
+          null,
+          null,
+          1,
+          4,
+          null,
           null
         ]
       },
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/app/controllers/application_controller.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/jacksonbickler/Mod2_projects/hang_in_there_api/app/serializers/poster_serializer.rb": {
+      "/Users/montyp/mod2/hang_in_there_api/app/serializers/poster_serializer.rb": {
         "lines": [
           1,
           1,
           null,
-          5,
+          6,
           null,
           12,
           null,
@@ -342,8 +361,26 @@
           null,
           null
         ]
+      },
+      "/Users/montyp/mod2/hang_in_there_api/app/serializers/error_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          3,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1734735700
+    "timestamp": 1734807710
   }
 }
