@@ -15,16 +15,12 @@ RSpec.describe Api::V1::PostersController, type: :controller do
 
     context 'when the request is valid' do
       it 'creates a new poster and returns a JSON response' do
-        # Send the POST request
         post :create, params: valid_attributes
 
-        # Check the response status
         expect(response.status).to eq(201)
 
-        # Parse the JSON response
         json_response = JSON.parse(response.body)
 
-        # Check that the response body contains the correct data
         expect(json_response['data']['attributes']['name']).to eq("DEFEAT")
         expect(json_response['data']['attributes']['description']).to eq("It's too late to start now.")
         expect(json_response['data']['attributes']['price']).to eq(35.00)
