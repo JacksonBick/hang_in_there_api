@@ -1,14 +1,10 @@
 class Api::V1::PostersController < ApplicationController
     def index
-        render json: {
-            data: Poster.all
-        }
+        render json: PosterSerializer.new(Poster.all)
     end
 
     def show
-        render json: {
-            data: Poster.find(params[:id])
-        }
+        render json: PosterSerializer.new(Poster.find(params[:id]))
     end
 
     def update
