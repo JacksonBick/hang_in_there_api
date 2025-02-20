@@ -12,15 +12,11 @@ class Api::V1::PostersController < ApplicationController
     end
 
     def create
-    
-        poster = Poster.new(poster_params)
-    
-        if poster.save
-            render json: PosterSerializer.format_single_poster(poster, {})
-        else
-            render json: ErrorSerializer.format_error(422, poster.errors.full_messages.join(", ")), status: :unprocessable_entity
-        end
-    end
+        poster = Poster.create!(poster_params)
+      
+        render json: PosterSerializer.new(poster).serializable_hash, status: :created
+    end      
+        
     
     def update
         poster = Poster.find(params[:id])
