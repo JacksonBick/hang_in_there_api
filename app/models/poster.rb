@@ -4,9 +4,14 @@ class Poster < ApplicationRecord
 
         if params["name"]
             queryResult = Poster.where("name like ?", "%#{params['name'].upcase}%")
-        elsif params["min_price"]
+        end
+        if params["min_price"]
             queryResult = Poster.where("price > ?", params["min_price"])
-        else
+        end
+        if params["max_price"]
+            queryResult = Poster.where("price < ?", params["max_price"])
+        end
+        if !queryResult
             queryResult = Poster.all
         end
 
