@@ -11,6 +11,17 @@ class Api::V1::PostersController < ApplicationController
         }
     end
 
+    def create
+    
+        poster = Poster.new(poster_params)
+    
+        if poster.save
+            render json: PosterSerializer.format_single_poster(poster, {})
+        else
+            render json: ErrorSerializer.format_error(422, poster.errors.full_messages.join(", ")), status: :unprocessable_entity
+        end
+    end
+    
     def update
         poster = Poster.find(params[:id])
         poster.update!(poster_params)
@@ -31,15 +42,6 @@ class Api::V1::PostersController < ApplicationController
         params.permit(:name, :description, :year, :vintage, :img_url, :price)
     end
 
-    def create
-  
-        poster = Poster.new(poster_params)
-      
-        if poster.save
-          render json: PosterSerializer.format_single_poster(poster, {})
-        else
-          render json: ErrorSerializer.format_error(422, poster.errors.full_messages.join(", ")), status: :unprocessable_entity
-        end
-    end
     
+
 end
