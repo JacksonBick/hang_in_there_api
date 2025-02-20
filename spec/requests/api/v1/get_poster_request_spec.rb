@@ -105,4 +105,46 @@ describe "get poster", type: :request do
         expect(posterNames).to include("FAILURE")
         expect(posterNames).to include("REGRET")
     end
+
+    it "Can return all posters below a given price" do
+        regret = Poster.create(
+            name: "REGRET",
+            description: "Hard work rarely pays off.",
+            price: 89.00,
+            year: 2018,
+            vintage: true,
+            img_url:  "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
+        )
+        futility = Poster.create(
+            name: "FUTILITY",
+            description: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+            price: 150.0,
+            year: 2016,
+            vintage: false,
+            img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
+        )
+        failure = Poster.create(
+            name: "FAILURE",
+            description: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d",
+            price: 100.0,
+            year: 2016,
+            vintage: false,
+            img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
+        )
+
+        get "/api/v1/posters?max_price=100"
+
+        expect(response).to be_successful
+
+        posters = JSON.parse(response.body, symbolize_names: true)[:data]
+
+        expect(posters.count).to eq(2)
+        
+        posterNames = posters.map do |poster|
+            poster[:attributes][:name]
+        end
+
+        expect(posterNames).to include("FAILURE")
+        expect(posterNames).to include("REGRET")
+    end
 end
