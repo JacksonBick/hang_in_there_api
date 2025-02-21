@@ -15,7 +15,7 @@ class Poster < ApplicationRecord
             queryResult = Poster.all
         end
 
-        PosterSerializer.new(queryResult)
+        queryResult
     end
 
     def self.sort_by_date(sort)

@@ -4,7 +4,7 @@ class Api::V1::PostersController < ApplicationController
             posters = Poster.sort_by_date(params[:sort])
             render json: PosterSerializer.new(posters, meta: { count: posters.size })
         else
-            posters = Poster.all
+            posters = Poster.index(params)
             
             render json: {
                 data: PosterSerializer.new(posters).serializable_hash[:data],
