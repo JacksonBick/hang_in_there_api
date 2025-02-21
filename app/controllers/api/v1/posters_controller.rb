@@ -1,18 +1,16 @@
 class Api::V1::PostersController < ApplicationController
     def index
-        posters = Poster.all
-        render json: {
-        data: PosterSerializer.new(posters),
-        meta: { count: posters.count }
-        }
-
         if params[:sort]
             posters = Poster.sort_by_date(params[:sort])
             render json: PosterSerializer.new(posters, meta: { count: posters.size })
         else
-            render json: Poster.index(params)
+            posters = Poster.all
+            
+            render json: {
+                data: PosterSerializer.new(posters).serializable_hash[:data],
+                meta: { count: posters.size }
+            }
         end
-
     end
 
     def show
@@ -45,7 +43,6 @@ class Api::V1::PostersController < ApplicationController
     def poster_params
         params.permit(:name, :description, :year, :vintage, :img_url, :price)
     end
-
     
 
 end
