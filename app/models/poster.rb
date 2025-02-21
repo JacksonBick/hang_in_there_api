@@ -17,4 +17,8 @@ class Poster < ApplicationRecord
 
         PosterSerializer.new(queryResult)
     end
+
+    def self.sort_by_date(sort)
+        order(created_at: sort.to_sym)
+    end
 end
