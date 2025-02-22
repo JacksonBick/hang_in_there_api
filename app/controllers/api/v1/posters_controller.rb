@@ -4,12 +4,8 @@ class Api::V1::PostersController < ApplicationController
             posters = Poster.sort_by_date(params[:sort])
             render json: PosterSerializer.new(posters, meta: { count: posters.size })
         else
-            posters = Poster.index(params)
-            
-            render json: {
-                data: PosterSerializer.new(posters).serializable_hash[:data],
-                meta: { count: posters.size }
-            }
+            posters = Poster.all_posters(params)
+            render json: PosterSerializer.new(posters, meta: { count: posters.size })
         end
     end
 
@@ -19,10 +15,8 @@ class Api::V1::PostersController < ApplicationController
 
     def create
         poster = Poster.create!(poster_params)
-      
         render json: PosterSerializer.new(poster).serializable_hash, status: :created
-    end      
-        
+    end
     
     def update
         poster = Poster.find(params[:id])
@@ -35,14 +29,9 @@ class Api::V1::PostersController < ApplicationController
         poster.destroy
     end
 
-    # this will make the params strong and will only allow
-    # primited attrubutes allowed to be change
-
     private 
 
     def poster_params
         params.permit(:name, :description, :year, :vintage, :img_url, :price)
     end
-    
-
 end
